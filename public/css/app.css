@@ -54,3 +54,6 @@ section.login {
 #login {
   background: red;
 }
+.toast {
+  size: 50;
+}

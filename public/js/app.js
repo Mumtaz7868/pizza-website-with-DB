@@ -7,6 +7,25 @@ function updateCart(pizza) {
     method: "POST",
     success: (res) => {
       cartCounter.innerText = res.totalQty;
+      var notyf = new Notyf({
+        duration: 1000,
+        position: {
+          x: "right",
+          y: "top",
+        },
+      });
+      notyf.success("Item added to cart successfully!");
+    },
+    error: (res) => {
+      cartCounter.innerText = res.totalQty;
+      var notyf = new Notyf({
+        duration: 1000,
+        position: {
+          x: "right",
+          y: "top",
+        },
+      });
+      notyf.error("Someting went wrong!");
     },
   });
 }
@@ -18,10 +37,3 @@ window.addEventListener("DOMContentLoaded", (event) => {
     });
   });
 });
-
-// addToCart.forEach((btn) => {
-//   btn.addEventListener("click", (e) => {
-//     let pizza = JSON.parse(btn.dataset.pizza);
-//     console.log("zzz");
-//     updateCart(pizza);
-//   });

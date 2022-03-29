@@ -1,6 +1,8 @@
+const { json } = require("express");
+
 function cartController() {
   return {
-    cart(req, res) {
+    index(req, res) {
       res.render("customers/cart");
     },
     update(req, res) {
