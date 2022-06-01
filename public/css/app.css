@@ -57,3 +57,6 @@ section.login {
 .toast {
   size: 50;
 }
+a.link {
+  color: red;
+}

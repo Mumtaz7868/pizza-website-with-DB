@@ -1,10 +1,12 @@
 $(function () {
-  $(".add-to-card").click(updateCart);
+  // $(".add-to-card").click(updateCart);
+  // alert(moment().format("hh:mm A"));
 });
 function updateCart(pizza) {
   $.ajax({
     url: "/update-cart",
     method: "POST",
+    data: pizza,
     success: (res) => {
       cartCounter.innerText = res.totalQty;
       var notyf = new Notyf({
@@ -17,7 +19,6 @@ function updateCart(pizza) {
       notyf.success("Item added to cart successfully!");
     },
     error: (res) => {
-      cartCounter.innerText = res.totalQty;
       var notyf = new Notyf({
         duration: 1000,
         position: {
@@ -29,6 +30,7 @@ function updateCart(pizza) {
     },
   });
 }
+
 window.addEventListener("DOMContentLoaded", (event) => {
   document.querySelectorAll(".add-to-card").forEach((btn) => {
     btn.addEventListener("click", function (e) {
@@ -37,3 +39,12 @@ window.addEventListener("DOMContentLoaded", (event) => {
     });
   });
 });
+
+const alertMsg = document.querySelector("#success-alert");
+if (alertMsg) {
+  setTimeout(() => {
+    alertMsg.remove;
+  }, 2000);
+}
+
+// initAdmin();
