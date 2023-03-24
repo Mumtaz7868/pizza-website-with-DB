@@ -1,8 +1,12 @@
 .nav {
   background: lightgoldenrodyellow;
 }
+#logo {
+  margin-left: 30px;
+}
 .div {
   background: red;
+  margin-right: 30px;
   /* padding-right: 7px;
   padding-left: 7px;
   padding-top: 7px;
